@@ -81,7 +81,7 @@ public class Window extends JFrame {
                 if(cow.getColor() == "white" && !cow.isDrinkLemon){
                     btnEatLemon.setVisible(true);
                 }
-                if(cow.getColor() == "white"){
+                if(cow.getColor() == "brown"){
                     btnEatLemon.setVisible(false);
                 }
             }
