@@ -6,6 +6,8 @@ public class BrownCow extends Cow{
 
     public BrownCow(int id, String color, int age) {
         super(id, color, age);
+        super.realColor = "brown";
+
         //TODO Auto-generated constructor stub
     }
     @Override

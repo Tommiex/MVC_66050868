@@ -17,6 +17,7 @@ public class Window extends JFrame {
     private JButton btnGetCow; // Button to display input
     private JButton btnGetMilk; // Button to Get Milk field
     private JButton btnEatLemon; // Button to EatLemon Button
+    private JButton btnReset; // Button Reset
     private Manage manage;
      private ArrayList<Cow> cows = new ArrayList<>(); //keep order of cow before update in output area
 
@@ -35,6 +36,7 @@ public class Window extends JFrame {
         btnGetCow = new JButton("Get Cow");
         btnGetMilk = new JButton("Get Milk");
         btnEatLemon = new JButton("Eat Lemon");
+        btnReset = new JButton("Reset");
 
         // Set layout for the JFrame
         setLayout(new FlowLayout());
@@ -109,6 +111,24 @@ public class Window extends JFrame {
                
             }
         });
+        btnGetMilk.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Display milk information
+                JOptionPane.showMessageDialog(btnGetMilk,
+                        manage.getMilkfromCow());
+                Cow currentCow = manage.getCurrentCow();
+                updateCowList(currentCow);
+            }
+        });
+        btnReset.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Display milk information
+                manage.reset();
+                
+            }
+        });
 
         // Set default close operation
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -132,8 +152,10 @@ public class Window extends JFrame {
                     + "  milk product: " + c.numberOfMilk + "\n");
                 }
             }
+            
     }
 
+  
     // Show the updated list of cows in the output area
     public void showStock() {
         outputArea.setText(""); // Clear the existing content

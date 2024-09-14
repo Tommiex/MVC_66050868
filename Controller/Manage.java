@@ -36,6 +36,16 @@ public class Manage {
         currentCow.numberOfMilk +=1;
         return this.currentCow.getMilk();
     }
+    public void reset(){
+        for (Cow  c : cowStock.getStock()) {
+            c.numberOfMilk = 0;
+            if(c.realColor == "white"){
+                c.setColor("white");
+            }else{
+                c.setColor("brown");
+            }
+        }
+    }
     
     public ArrayList<Cow> getStock(){
         return cowStock.getStock();

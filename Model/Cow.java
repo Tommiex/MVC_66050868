@@ -7,6 +7,7 @@ public class Cow{
     public boolean isShown;
     public int numberOfMilk;
     public boolean isDrinkLemon;
+    public String realColor; 
     public Cow(int id,String color,int age){
         this.id = id;
         this.color = color;
