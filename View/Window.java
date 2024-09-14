@@ -16,7 +16,7 @@ public class Window extends JFrame {
     private JTextArea outputArea; // Output area
     private JButton btnGetCow; // Button to display input
     private JButton btnGetMilk; // Button to Get Milk field
-    private JButton btnEatLemon; // Button to clear output area
+    private JButton btnEatLemon; // Button to EatLemon Button
     private Manage manage;
      private ArrayList<Cow> cows = new ArrayList<>(); //keep order of cow before update in output area
 
@@ -44,7 +44,7 @@ public class Window extends JFrame {
         add(inputField); // Add input area
         add(btnGetCow); // Add display button
         add(btnGetMilk); // Add Get Milk button
-        add(btnEatLemon); // Add clear output button
+        add(btnEatLemon); // Add EatLemon button
         btnEatLemon.setVisible(false);
         add(new JLabel("Output:")); // Label for output area
         add(scrollPane); // Add output area inside scroll pane
@@ -81,6 +81,9 @@ public class Window extends JFrame {
                 if(cow.getColor() == "white" && !cow.isDrinkLemon){
                     btnEatLemon.setVisible(true);
                 }
+                if(cow.getColor() == "white"){
+                    btnEatLemon.setVisible(false);
+                }
             }
         });
 
@@ -103,6 +106,7 @@ public class Window extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 Cow cow = manage.getCurrentCow();
                 cow.isDrinkLemon = true;
+               
             }
         });
 
